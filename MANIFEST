@@ -1,0 +1,26 @@
+Build.PL
+Changes
+eg/mock_io_file.pl
+eg/mock_meta_io_file.pl
+lib/Test/Builder/Mock/Class.pm
+lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
+lib/Test/Builder/Mock/Class/Role/Object.pm
+MANIFEST			This list of files
+MANIFEST.SKIP
+t/010_eg_mock_io_file.t
+t/020_eg_mock_meta_io_file.t
+t/test.pl
+xt/check_changes.t
+xt/consistent_version_numbers.t
+xt/copyright.t
+xt/cover.pl
+xt/distribution.t
+xt/kwalitee.t
+xt/perlcritic.t
+xt/perlcriticrc
+xt/pod.t
+xt/pod_coverage.t
+xt/pod_spell.t
+xt/pod_spellrc
+xt/pod_syntax.t
+xt/signature.t
