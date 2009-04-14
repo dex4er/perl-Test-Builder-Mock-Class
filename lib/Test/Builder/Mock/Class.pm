@@ -171,7 +171,7 @@ Example code:
   my $mock = mock_anon_class 'IO::File';
   my $io = $mock->new_object;
   $io->mock_return( open => 1, args => [qr//, 'r'] );
-  
+
   ok( $io->open('/etc/passwd', 'r'), '$io->open' );
   $io->mock_tally;
 
