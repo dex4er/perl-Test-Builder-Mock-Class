@@ -154,6 +154,27 @@ Imports all functions into caller's namespace.
 
 =end umlwiki
 
+=head1 EXAMPLE
+
+The C<Test::Builder::Mock::Class> fits perfectly to L<Test::Builder> tests.
+It adds automatically the tests for each C<mock_invoke> (which is called
+implicitly by all mock methods) and C<mock_tally>.  It means that you need to
+add these tests to your test plan.
+
+Example code:
+
+  package My::ExampleTest;
+
+  use Test::More tests => 3;
+  use Test::Builder::Mock::Class ':all';
+
+  my $mock = mock_anon_class 'IO::File';
+  my $io = $mock->new_object;
+  $io->mock_return( open => 1, args => [qr//, 'r'] );
+  
+  ok( $io->open('/etc/passwd', 'r'), '$io->open' );
+  $io->mock_tally;
+
 =head1 SEE ALSO
 
 Mock metaclass API: L<Test::Builder::Mock::Class::Role::Meta::Class>,
