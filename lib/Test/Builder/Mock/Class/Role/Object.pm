@@ -80,7 +80,7 @@ around 'mock_tally' => sub {
 };
 
 
-=item mock_invoke( I<method> : Str, I<args> : Array ) : Any
+=item <<around>> mock_invoke( I<method> : Str, I<args> : Array ) : Any
 
 Returns the expected value for the method name and checks expectations.  See
 L<Test::Mock::Class::Role::Object> for more description.
