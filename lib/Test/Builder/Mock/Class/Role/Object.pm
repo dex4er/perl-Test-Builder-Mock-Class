@@ -32,6 +32,18 @@ use Exception::Base (
 );
 
 
+=head1 ATTRIBUTES
+
+=over
+
+=item _mock_test_builder : Test::Builder
+
+The L<Test::Builder> singleton object.
+
+=back
+
+=cut
+
 has '_mock_test_builder' => (
     is      => 'rw',
     default => sub { Test::Builder->new },
@@ -47,13 +59,12 @@ use namespace::clean -except => 'meta';
 
 =over
 
-=item mock_tally(I<>) : Self
+=item <<around>> mock_tally(I<>) : Self
 
-Check the expectations at the end.  It should be called expicitly if
-C<minimum> or C<count> parameter was used for expectation, or following
-methods was called: C<mock_expect_at_least_once>,
-C<mock_add_expectation_call_count>, C<mock_expect_minimum_call_count>
-or C<mock_expect_once>.
+Check the expectations at the end.  See L<Test::Mock::Class::Role::Object> for
+more description.
+
+The test passes if original C<mock_tally> method doesn't throw an exception.
 
 =cut
 
@@ -71,12 +82,10 @@ around 'mock_tally' => sub {
 
 =item mock_invoke( I<method> : Str, I<args> : Array ) : Any
 
-Returns the expected value for the method name and checks expectations.  Will
-generate any test assertions as a result of expectations if there is a test
-present.
+Returns the expected value for the method name and checks expectations.  See
+L<Test::Mock::Class::Role::Object> for more description.
 
-This method is called in overridden methods of mock class, but you need to
-call it explictly if you constructed own method.
+The test passes if original C<mock_tally> method doesn't throw an exception.
 
 =cut
 
