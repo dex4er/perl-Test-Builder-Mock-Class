@@ -42,15 +42,19 @@ use Moose;
 
 =head1 INHERITANCE
 
-=over
+=over 2
 
-=item extends L<Moose::Meta::Class>
+=item *
+
+extends L<Moose::Meta::Class>
 
 =cut
 
 extends 'Moose::Meta::Class';
 
-=item with L<Test::Builder::Mock::Class::Role::Meta::Class>
+=item *
+
+with L<Test::Builder::Mock::Class::Role::Meta::Class>
 
 =back
 

@@ -1,9 +1,9 @@
 ------------------------------------------------------------------------
 0.0101 | Piotr Roszatycki <dexter@cpan.org> | 2009-04-15
 
-Fixes:
+Changes:
 
-* Minor bugs in POD.
+* Aliased methods from inherited roles are used.
 
 ------------------------------------------------------------------------
 0.01 | Piotr Roszatycki <dexter@cpan.org> | 2009-04-14

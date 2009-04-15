@@ -21,6 +21,19 @@ our $VERSION = '0.01';
 
 use Moose::Role;
 
+
+=head1 INHERITANCE
+
+=over 2
+
+=item *
+
+L<Test::Mock::Class::Role::Meta::Class>
+
+=back
+
+=cut
+
 with 'Test::Mock::Class::Role::Meta::Class';
 
 
