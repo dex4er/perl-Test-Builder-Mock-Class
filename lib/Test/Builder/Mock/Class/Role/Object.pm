@@ -8,7 +8,7 @@ Test::Builder::Mock::Class::Role::Object - Role for base object of mock class
 
 =head1 DESCRIPTION
 
-This role provides an API for defining and changing behavior of mock class.
+This role provides an API for changing behavior of mock class.
 
 =cut
 
@@ -36,7 +36,7 @@ use Exception::Base (
 
 =over
 
-=item _mock_test_builder : Test::Builder
+=item B<_mock_test_builder> : Test::Builder
 
 The L<Test::Builder> singleton object.
 
@@ -59,7 +59,7 @@ use namespace::clean -except => 'meta';
 
 =over
 
-=item <<around>> mock_tally(I<>) : Self
+=item <<around>> B<mock_tally>(I<>) : Self
 
 Check the expectations at the end.  See L<Test::Mock::Class::Role::Object> for
 more description.
@@ -80,7 +80,7 @@ around 'mock_tally' => sub {
 };
 
 
-=item <<around>> mock_invoke( I<method> : Str, I<args> : Array ) : Any
+=item <<around>> B<mock_invoke>( I<method> : Str, I<args> : Array ) : Any
 
 Returns the expected value for the method name and checks expectations.  See
 L<Test::Mock::Class::Role::Object> for more description.
@@ -124,6 +124,8 @@ around 'mock_invoke' => sub {
  +<<around>> mock_tally() : Self
  +<<around>> mock_invoke( method : Str, args : Array ) : Any
                                                                               ]
+
+[Test::Builder::Mock::Class::Role::Object] ---|> [<<role>> Test::Mock::Class::Role::Object]
 
 =end umlwiki
 
