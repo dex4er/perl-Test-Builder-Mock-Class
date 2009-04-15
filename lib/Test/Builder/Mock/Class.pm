@@ -162,7 +162,7 @@ Imports all functions into caller's namespace.
 =head1 EXAMPLE
 
 The C<Test::Builder::Mock::Class> fits perfectly to L<Test::Builder>
-(L<Test::Simple> or L<Test::More) tests. It adds automatically the tests for
+(L<Test::Simple> or L<Test::More>) tests. It adds automatically the tests for
 each C<mock_invoke> (which is called implicitly by all mock methods) and
 C<mock_tally>.  It means that you need to add these tests to your test plan.
 
