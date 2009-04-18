@@ -16,6 +16,12 @@ Test::Builder::Mock::Class - Simulating other classes for Test::Builder
   my $metamock = mock_anon_class 'Net::FTP';
   my $mock_object = $metamock->new_object;
 
+  # anonymous class with role applied
+  my $metamock = Test::Mock::Class->create_anon_class(
+      roles => [ 'My::Handler::Role' ],
+  );
+  my $mock_object = $metamock->new_object;
+
 =head1 DESCRIPTION
 
 This module adds support for standard L<Test::Builder> framework
