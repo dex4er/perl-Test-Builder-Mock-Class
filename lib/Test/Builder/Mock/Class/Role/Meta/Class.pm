@@ -78,7 +78,7 @@ use namespace::clean -except => 'meta';
  ------------------------------------------------------------------------------
                                                                                ]
 
-[Test::Builder::Mock::Class::Role::Meta::Class] ---|> [<<role>> Test::Mock::Class::Role::Meta::Class]                                                                               
+[Test::Builder::Mock::Class::Role::Meta::Class] ---|> [<<role>> Test::Mock::Class::Role::Meta::Class]
 
 =end umlwiki
 
