@@ -17,7 +17,7 @@ Test::Builder::Mock::Class - Simulating other classes for Test::Builder
   my $mock_object = $metamock->new_object;
 
   # anonymous class with role applied
-  my $metamock = Test::Mock::Class->create_anon_class(
+  my $metamock = Test::Builder::Mock::Class->create_anon_class(
       roles => [ 'My::Handler::Role' ],
   );
   my $mock_object = $metamock->new_object;
@@ -201,11 +201,11 @@ L<Test::Mock::Class>.
 
 Other implementations: L<Test::MockObject>, L<Test::MockClass>.
 
+=for readme continue
+
 =head1 BUGS
 
 The API is not stable yet and can be changed in future.
-
-=for readme continue
 
 =head1 AUTHOR
 

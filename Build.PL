@@ -16,6 +16,7 @@ my $build = Module::Build->new(
     license => 'lgpl',
     requires => {
         'perl'               => 5.006,
+        'namespace::clean'   => 0,
         'Test::Mock::Class'  => 0.02,
         'Test::Builder'      => 0,
     },
