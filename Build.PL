@@ -17,7 +17,8 @@ my $build = Module::Build->new(
     requires => {
         'perl'               => 5.006,
         'namespace::clean'   => 0,
-        'Test::Mock::Class'  => 0.02,
+        'Moose'              => 0.89,
+        'Test::Mock::Class'  => 0.0201,
         'Test::Builder'      => 0,
     },
     optional => {
