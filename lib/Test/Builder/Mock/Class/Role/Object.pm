@@ -35,10 +35,11 @@ with L<Test::Mock::Class::Role::Object>
 =cut
 
 with 'Test::Mock::Class::Role::Object' => {
-    alias => {
+    -alias => {
         mock_invoke => '_mock_invoke_base',
         mock_tally  => '_mock_tally_base',
     },
+    -excludes => [ 'mock_invoke', 'mock_tally' ],
 };
 
 
