@@ -74,7 +74,7 @@ has '_mock_test_builder' => (
 use namespace::clean -except => 'meta';
 
 
-## no critic RequireCheckingReturnValueOfEval
+## no critic qw(RequireCheckingReturnValueOfEval)
 
 =head1 METHODS
 
