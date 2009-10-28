@@ -1,9 +1,14 @@
 ------------------------------------------------------------------------
-0.0201 | Piotr Roszatycki <dexter@cpan.org> | 2009-10-27
+0.0201 | Piotr Roszatycki <dexter@cpan.org> | 2009-10-28
 
 Fixes:
 
 * Compatibility with Moose >= 0.90.
+
+Changes:
+
+* Test::Builder::Mock::Class::Role::Object:
+  - Use new Moose "with" keyword syntax.
 
 ------------------------------------------------------------------------
 0.02 | Piotr Roszatycki <dexter@cpan.org> | 2009-04-18
