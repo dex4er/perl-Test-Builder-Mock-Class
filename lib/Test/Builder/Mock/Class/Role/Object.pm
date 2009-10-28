@@ -19,7 +19,7 @@ use warnings;
 
 our $VERSION = '0.0201';
 
-use Moose::Role;
+use Moose::Role 0.89;
 
 
 =head1 INHERITANCE
