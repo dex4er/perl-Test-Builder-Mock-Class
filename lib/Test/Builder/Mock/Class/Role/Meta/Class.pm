@@ -17,7 +17,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.02';
 
 use Moose::Role;
 
@@ -78,7 +78,7 @@ use namespace::clean -except => 'meta';
  ------------------------------------------------------------------------------
                                                                                ]
 
-[Test::Builder::Mock::Class::Role::Meta::Class] ---|> [<<role>> Test::Mock::Class::Role::Meta::Class]                                                                               
+[Test::Builder::Mock::Class::Role::Meta::Class] ---|> [<<role>> Test::Mock::Class::Role::Meta::Class]
 
 =end umlwiki
 

@@ -17,7 +17,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.02';
 
 use Moose::Role;
 
@@ -41,6 +41,8 @@ with 'Test::Mock::Class::Role::Object' => {
     },
 };
 
+
+use English '-no_match_vars';
 
 use Test::Builder;
 
@@ -92,7 +94,7 @@ sub mock_tally {
     my $return = eval {
         $self->_mock_tally_base;
     };
-    $self->_mock_test_builder->is_eq($@, '', 'mock_tally()');
+    $self->_mock_test_builder->is_eq($EVAL_ERROR, '', 'mock_tally()');
 
     return $return;
 };
@@ -119,7 +121,7 @@ sub mock_invoke {
             $return = $self->_mock_invoke_base($method, @args);
         };
     };
-    $self->_mock_test_builder->is_eq($@, '', "mock_invoke($method)");
+    $self->_mock_test_builder->is_eq($EVAL_ERROR, '', "mock_invoke($method)");
 
     return wantarray ? @return : $return;
 };

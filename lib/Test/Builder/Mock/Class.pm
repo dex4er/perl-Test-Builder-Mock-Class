@@ -16,6 +16,12 @@ Test::Builder::Mock::Class - Simulating other classes for Test::Builder
   my $metamock = mock_anon_class 'Net::FTP';
   my $mock_object = $metamock->new_object;
 
+  # anonymous class with role applied
+  my $metamock = Test::Builder::Mock::Class->create_anon_class(
+      roles => [ 'My::Handler::Role' ],
+  );
+  my $mock_object = $metamock->new_object;
+
 =head1 DESCRIPTION
 
 This module adds support for standard L<Test::Builder> framework
@@ -34,7 +40,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.0102';
+our $VERSION = '0.02';
 
 use Moose;
 
@@ -94,10 +100,11 @@ The function returns the metaclass object of new I<mock_class>.
         };
     };
 
-=item B<mock_anon_class>( I<class> : Str ) : Moose::Meta::Class
+=item B<mock_anon_class>( I<class> : Str = undef ) : Moose::Meta::Class
 
 Creates an anonymous mock class based on original I<class>.  The name of this
-class is automatically generated.
+class is automatically generated.  If I<class> argument not defined, the empty
+mock class is created.
 
 The function returns the metaobject of new mock class.
 
@@ -106,9 +113,9 @@ The function returns the metaobject of new mock class.
 =cut
 
     $exports{mock_anon_class} = sub {
-        sub ($) {
+        sub (;$) {
             return __PACKAGE__->create_mock_anon_class(
-                class => $_[0],
+                defined $_[0] ? (class => $_[0]) : (),
             );
         };
     };
@@ -194,11 +201,11 @@ L<Test::Mock::Class>.
 
 Other implementations: L<Test::MockObject>, L<Test::MockClass>.
 
+=for readme continue
+
 =head1 BUGS
 
 The API is not stable yet and can be changed in future.
-
-=for readme continue
 
 =head1 AUTHOR
 
