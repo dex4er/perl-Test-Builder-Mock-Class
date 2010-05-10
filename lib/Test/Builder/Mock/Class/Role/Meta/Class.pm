@@ -8,7 +8,7 @@ Test::Builder::Mock::Class::Role::Meta::Class - Metaclass for mock class
 
 =head1 DESCRIPTION
 
-This role provides an API for defining and changing behavior of mock class.
+This role provides an API for defining mock class.
 
 =cut
 
@@ -17,9 +17,22 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.0101';
 
 use Moose::Role;
+
+
+=head1 INHERITANCE
+
+=over 2
+
+=item *
+
+L<Test::Mock::Class::Role::Meta::Class>
+
+=back
+
+=cut
 
 with 'Test::Mock::Class::Role::Meta::Class';
 
@@ -33,7 +46,7 @@ use Exception::Base (
 
 =over
 
-=item mock_base_object_role : Str = "Test::Builder::Mock::Class::Role::Object"
+=item B<mock_base_object_role> : Str = "Test::Builder::Mock::Class::Role::Object"
 
 Base object role for mock class.  The default is
 L<Test::Builder::Mock::Class::Role::Object>.
@@ -58,18 +71,20 @@ use namespace::clean -except => 'meta';
 
 = Class Diagram =
 
-[                                 <<role>>
-                   Test::Builder::Mock::Class::Role::Meta::Class
+[                              <<role>>
+                  Test::Builder::Mock::Class::Role::Meta::Class
  ------------------------------------------------------------------------------
- +mock_base_object_role = "Test::Mock::Class::Role::Object"
+ +mock_base_object_role = "Test::Builder::Mock::Class::Role::Object"
  ------------------------------------------------------------------------------
                                                                                ]
+
+[Test::Builder::Mock::Class::Role::Meta::Class] ---|> [<<role>> Test::Mock::Class::Role::Meta::Class]                                                                               
 
 =end umlwiki
 
 =head1 SEE ALSO
 
-L<Test::Mock::Class>.
+L<Test::Mock::Class::Role::Meta::Class>, L<Test::Builder::Mock::Class>.
 
 =head1 BUGS
 

@@ -4,7 +4,7 @@ package Test::Builder::Mock::Class;
 
 =head1 NAME
 
-Test::Builder::Mock::Class - Simulating other classes with Test::Builder
+Test::Builder::Mock::Class - Simulating other classes for Test::Builder
 
 =head1 SYNOPSIS
 
@@ -34,7 +34,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.0101';
 
 use Moose;
 
@@ -42,15 +42,19 @@ use Moose;
 
 =head1 INHERITANCE
 
-=over
+=over 2
 
-=item extends L<Moose::Meta::Class>
+=item *
+
+extends L<Moose::Meta::Class>
 
 =cut
 
 extends 'Moose::Meta::Class';
 
-=item with L<Test::Builder::Mock::Class::Role::Meta::Class>
+=item *
+
+with L<Test::Builder::Mock::Class::Role::Meta::Class>
 
 =back
 
@@ -71,7 +75,7 @@ use namespace::clean -except => 'meta';
 BEGIN {
     my %exports = ();
 
-=item mock_class(I<class> : Str, I<mock_class> : Str = undef) : Moose::Meta::Class
+=item B<mock_class>( I<class> : Str, I<mock_class> : Str = undef ) : Moose::Meta::Class
 
 Creates the concrete mock class based on original I<class>.  If the name of
 I<mock_class> is undefined, its name is created based on name of original
@@ -90,7 +94,7 @@ The function returns the metaclass object of new I<mock_class>.
         };
     };
 
-=item mock_anon_class(I<class> : Str) : Moose::Meta::Class
+=item B<mock_anon_class>( I<class> : Str ) : Moose::Meta::Class
 
 Creates an anonymous mock class based on original I<class>.  The name of this
 class is automatically generated.
@@ -144,22 +148,23 @@ Imports all functions into caller's namespace.
 
 = Class Diagram =
 
-[                          <<utility>>
-                    Test::Builder::Mock::Class
- -----------------------------------------------------------------------
- -----------------------------------------------------------------------
- mock_class(class : Str, mock_class : Str = undef) : Moose::Meta::Class
- mock_anon_class(class : Str) : Moose::Meta::Class
-                                                                        ]
+[                           Test::Builder::Mock::Class
+ ------------------------------------------------------------------------------------
+ ------------------------------------------------------------------------------------
+ <<utility>> mock_class( class : Str, mock_class : Str = undef ) : Moose::Meta::Class
+ <<utility>> mock_anon_class( class : Str ) : Moose::Meta::Class
+                                                                                     ]
+
+[Test::Builder::Mock::Class] ---|> [Moose::Meta::Class] [<<role>> Test::Builder::Mock::Class::Role::Meta::Class]
 
 =end umlwiki
 
 =head1 EXAMPLE
 
-The C<Test::Builder::Mock::Class> fits perfectly to L<Test::Builder> tests.
-It adds automatically the tests for each C<mock_invoke> (which is called
-implicitly by all mock methods) and C<mock_tally>.  It means that you need to
-add these tests to your test plan.
+The C<Test::Builder::Mock::Class> fits perfectly to L<Test::Builder>
+(L<Test::Simple> or L<Test::More>) tests. It adds automatically the tests for
+each C<mock_invoke> (which is called implicitly by all mock methods) and
+C<mock_tally>.  It means that you need to add these tests to your test plan.
 
 Example code:
 
@@ -182,9 +187,10 @@ L<Moose::Meta::Class>.
 
 Mock object methods: L<Test::Builder::Mock::Class::Role::Object>.
 
-Perl standard testing: L<Test::Builder>, L<Test::More>, L<Test::Simple>.
+Perl standard testing: L<Test::Builder>, L<Test::Simple>, L<Test::More>.
 
-Mock classes for L<Test::Unit::Lite>: L<Test::Mock::Class>.
+Mock classes for xUnit-like testing (L<Test::Unit::Lite>):
+L<Test::Mock::Class>.
 
 Other implementations: L<Test::MockObject>, L<Test::MockClass>.
 

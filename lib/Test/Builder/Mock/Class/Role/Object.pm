@@ -8,7 +8,7 @@ Test::Builder::Mock::Class::Role::Object - Role for base object of mock class
 
 =head1 DESCRIPTION
 
-This role provides an API for defining and changing behavior of mock class.
+This role provides an API for changing behavior of mock class.
 
 =cut
 
@@ -17,11 +17,29 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.01';
+our $VERSION = '0.0101';
 
 use Moose::Role;
 
-with 'Test::Mock::Class::Role::Object';
+
+=head1 INHERITANCE
+
+=over 2
+
+=item *
+
+with L<Test::Mock::Class::Role::Object>
+
+=back
+
+=cut
+
+with 'Test::Mock::Class::Role::Object' => {
+    alias => {
+        mock_invoke => '_mock_invoke_base',
+        mock_tally  => '_mock_tally_base',
+    },
+};
 
 
 use Test::Builder;
@@ -36,7 +54,7 @@ use Exception::Base (
 
 =over
 
-=item _mock_test_builder : Test::Builder
+=item B<_mock_test_builder> : Test::Builder
 
 The L<Test::Builder> singleton object.
 
@@ -59,7 +77,7 @@ use namespace::clean -except => 'meta';
 
 =over
 
-=item <<around>> mock_tally(I<>) : Self
+=item B<mock_tally>(I<>) : Self
 
 Check the expectations at the end.  See L<Test::Mock::Class::Role::Object> for
 more description.
@@ -68,11 +86,11 @@ The test passes if original C<mock_tally> method doesn't throw an exception.
 
 =cut
 
-around 'mock_tally' => sub {
-    my ($next, $self) = @_;
+sub mock_tally {
+    my ($self) = @_;
 
     my $return = eval {
-        $self->$next();
+        $self->_mock_tally_base;
     };
     $self->_mock_test_builder->is_eq($@, '', 'mock_tally()');
 
@@ -80,7 +98,7 @@ around 'mock_tally' => sub {
 };
 
 
-=item <<around>> mock_invoke( I<method> : Str, I<args> : Array ) : Any
+=item B<mock_invoke>( I<method> : Str, I<args> : Array ) : Any
 
 Returns the expected value for the method name and checks expectations.  See
 L<Test::Mock::Class::Role::Object> for more description.
@@ -89,16 +107,16 @@ The test passes if original C<mock_tally> method doesn't throw an exception.
 
 =cut
 
-around 'mock_invoke' => sub {
-    my ($next, $self, $method, @args) = @_;
+sub mock_invoke {
+    my ($self, $method, @args) = @_;
 
     my ($return, @return);
     eval {
         if (wantarray) {
-            @return = $self->$next($method, @args);
+            @return = $self->_mock_invoke_base($method, @args);
         }
         else {
-            $return = $self->$next($method, @args);
+            $return = $self->_mock_invoke_base($method, @args);
         };
     };
     $self->_mock_test_builder->is_eq($@, '', "mock_invoke($method)");
@@ -121,15 +139,17 @@ around 'mock_invoke' => sub {
  -----------------------------------------------------------------------------
  #_mock_test_builder : Test::Builder
  -----------------------------------------------------------------------------
- +<<around>> mock_tally() : Self
- +<<around>> mock_invoke( method : Str, args : Array ) : Any
+ +mock_tally() : Self
+ +mock_invoke( method : Str, args : Array ) : Any
                                                                               ]
+
+[Test::Builder::Mock::Class::Role::Object] ---|> [<<role>> Test::Mock::Class::Role::Object]
 
 =end umlwiki
 
 =head1 SEE ALSO
 
-L<Test::Mock::Class>.
+L<Test::Mock::Class::Role::Object>, L<Test::Mock::Class>.
 
 =head1 BUGS
 
