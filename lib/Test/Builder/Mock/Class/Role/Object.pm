@@ -17,9 +17,9 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.02';
+our $VERSION = '0.0201';
 
-use Moose::Role;
+use Moose::Role 0.89;
 
 
 =head1 INHERITANCE
@@ -35,10 +35,11 @@ with L<Test::Mock::Class::Role::Object>
 =cut
 
 with 'Test::Mock::Class::Role::Object' => {
-    alias => {
+    -alias => {
         mock_invoke => '_mock_invoke_base',
         mock_tally  => '_mock_tally_base',
     },
+    -excludes => [ 'mock_invoke', 'mock_tally' ],
 };
 
 
@@ -73,7 +74,7 @@ has '_mock_test_builder' => (
 use namespace::clean -except => 'meta';
 
 
-## no critic RequireCheckingReturnValueOfEval
+## no critic qw(RequireCheckingReturnValueOfEval)
 
 =head1 METHODS
 

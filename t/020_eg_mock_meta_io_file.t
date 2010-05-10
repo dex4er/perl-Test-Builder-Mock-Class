@@ -7,31 +7,38 @@ use Carp ();
 
 $SIG{__WARN__} = sub { local $Carp::CarpLevel = 1; Carp::confess("Warning: ", @_) };
 
-use Test::More tests => 9;
+use Test::More tests => 16;
+use Test::Moose;
 
 use constant::boolean;
-use Test::Builder::Mock::Class ':all';
 
-mock_class 'IO::File' => 'IO::File::Mock';
+BEGIN { use_ok 'Test::Builder::Mock::Class', ':all' };
 
-my $mock = mock_anon_class 'IO::File';
-my $io = $mock->new_object;
-$io->mock_return( open => TRUE, args => [qr//, 'r'] );
-$io->mock_return( open => undef, args => [qr//, 'w'] );
-$io->mock_return_at( 0, getline => 'root:x:0:0:root:/root:/bin/bash' );
-$io->mock_expect_never( 'close' );
+eval {
+    isa_ok( my $mock = mock_anon_class( 'IO::File' ), 'Test::Builder::Mock::Class', 'mock_anon_class' );
 
-# ok
-ok( $io->open('/etc/passwd', 'r'), '$io->open' );
+    does_ok( my $io = $mock->new_object, 'Test::Builder::Mock::Class::Role::Object', '$io does Test::Builder::Mock::Class::Role::Object' );
 
-# first line
-like( $io->getline, qr/^root:[^:]*:0:0:/, '$io->getline' );
-
-# eof
-is( $io->getline, undef, '$io->getline' );
-
-# access denied
-ok( ! $io->open('/etc/passwd', 'w'), '$io->open' );
-
-# close was not called
-$io->mock_tally;
+    is( $io->mock_return( open => TRUE, args => [qr//, 'r'] ), $io, '$io->mock_return [1]' );
+    is( $io->mock_return( open => undef, args => [qr//, 'w'] ), $io, '$io->mock_return [2]' );
+    is( $io->mock_return_at( 0, getline => 'root:x:0:0:root:/root:/bin/bash' ), $io, '$io->mock_return_at' );
+    is( $io->mock_expect_never( 'close' ), $io, '$io->mock_expect_never' );
+    
+    # ok
+    ok( $io->open('/etc/passwd', 'r'), '$io->open' );
+    
+    # first line
+    like( $io->getline, qr/^root:[^:]*:0:0:/, '$io->getline' );
+    
+    # eof
+    is( $io->getline, undef, '$io->getline' );
+    
+    # access denied
+    ok( ! $io->open('/etc/passwd', 'w'), '$io->open' );
+    
+    # close was not called
+    $io->mock_tally;
+};
+if ($@) {
+    BAIL_OUT($@);
+};
