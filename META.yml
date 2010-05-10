@@ -1,13 +1,13 @@
 ---
 name: Test-Builder-Mock-Class
-version: 0.0101
+version: 0.0102
 author:
   - 'Piotr Roszatycki <dexter@cpan.org>'
 abstract: Simulating other classes for Test::Builder
-license: perl
+license: lgpl
 resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Test-Builder-Mock-Class
-  license: http://dev.perl.org/licenses/
+  license: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
   repository: https://dexter-cpan.googlecode.com/svn/Test-Builder-Mock-Class
 requires:
   Test::Builder: 0
@@ -16,13 +16,13 @@ requires:
 provides:
   Test::Builder::Mock::Class:
     file: lib/Test/Builder/Mock/Class.pm
-    version: 0.0101
+    version: 0.0102
   Test::Builder::Mock::Class::Role::Meta::Class:
     file: lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
-    version: 0.0101
+    version: 0.0102
   Test::Builder::Mock::Class::Role::Object:
     file: lib/Test/Builder/Mock/Class/Role/Object.pm
-    version: 0.0101
+    version: 0.0102
 generated_by: Module::Build version 0.32
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.2.html
