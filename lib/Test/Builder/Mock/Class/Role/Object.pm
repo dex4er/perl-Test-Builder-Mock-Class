@@ -168,7 +168,7 @@ Based on SimpleTest, an open source unit test framework for the PHP
 programming language, created by Marcus Baker, Jason Sweat, Travis Swicegood,
 Perrick Penet and Edward Z. Yang.
 
-Copyright (c) 2009 Piotr Roszatycki <dexter@cpan.org>.
+Copyright (c) 2009, 2010 Piotr Roszatycki <dexter@cpan.org>.
 
 This program is free software; you can redistribute it and/or modify it
 under GNU Lesser General Public License.
