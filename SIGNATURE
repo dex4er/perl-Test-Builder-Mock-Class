@@ -1,0 +1,53 @@
+This file contains message digests of all files listed in MANIFEST,
+signed via the Module::Signature module, version 0.55.
+
+To verify the content in this distribution, first make sure you have
+Module::Signature installed, then type:
+
+    % cpansign -v
+
+It will check each file's integrity, as well as the signature's
+validity.  If "==> Signature verified OK! <==" is not displayed,
+the distribution may already have been compromised, and you should
+not run its Makefile.PL or Build.PL.
+
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+SHA1 8bd0ff3240135d8a2d2418636641c51c7c437e2f Build.PL
+SHA1 c9651645c4135e12e0a5152d377884ec061c0481 Changes
+SHA1 74b1c398020b9c1e8849b7982751cb70ecc5de8d LICENSE
+SHA1 58db967c66ac414bc123bcb2829e4e113cfceb7e MANIFEST
+SHA1 7d9037725a8f8c9c65eff1e091819c215f55c650 MANIFEST.SKIP
+SHA1 a905b2dbc1387b137503138f0a2b19a3ebd01525 META.yml
+SHA1 b3101f1b16a64eed64605ece56216a06354286f4 Makefile.PL
+SHA1 b18336e15107bcd419a4af4b4ef3b21805bd53c2 README
+SHA1 7f23eaab6f48bb51f1dcc2d1c7694730218260c1 eg/mock_io_file.pl
+SHA1 8fb9657aa7bad5fbe28253ccd12527bab92d5d19 eg/mock_meta_io_file.pl
+SHA1 294f400f1c5b9fc69282ccd47cb792abca5486ed lib/Test/Builder/Mock/Class.pm
+SHA1 4c020dd53430f89ca6239f8292b756f3d8742ee0 lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
+SHA1 505f0a6a6b76bf08957b6e3f0e31f6f417393b7c lib/Test/Builder/Mock/Class/Role/Object.pm
+SHA1 79987f6c3db16fe3cd34ffc18f166c8a33274dfc t/010_eg_mock_io_file.t
+SHA1 f0f8e588271be3b8329652e9057237548e0b44f1 t/020_eg_mock_meta_io_file.t
+SHA1 abec3fa7149e59f9f36680c5a49dfbbebd9d6ecc t/test.pl
+SHA1 90353a99ac0f719b6f3e58029804d8556cedc2ab xt/check_changes.t
+SHA1 a56d0c02b6c992e04a77d13a6ee89504bd718572 xt/consistent_version_numbers.t
+SHA1 67bb4c141ea95809f3db2d526ce91d9e6d894756 xt/copyright.t
+SHA1 650dccfa9b6f5a98cf731c89041bea8935dbc623 xt/cover.pl
+SHA1 f5aac658ae1888964274e68d179413782082b7ad xt/distribution.t
+SHA1 44147122d52fef90ab3a2c65ebba4f89342174f8 xt/kwalitee.t
+SHA1 e8daa0c73cfc304c240fad2d2c2b1b628175a89d xt/perlcritic.t
+SHA1 bc3447b88eb7e052140f312924a21f366d525131 xt/perlcriticrc
+SHA1 2c579b58def8daec94f41b628ac81c256faaa2b1 xt/pod.t
+SHA1 775b3ac02805b6d703614f42608732fb43af2a41 xt/pod_coverage.t
+SHA1 bef7d46eb5cbc3e67956d4e823ec199f41ab9268 xt/pod_spell.t
+SHA1 021ea9d1d3b0d39b6d8e9fdd84f7b76fc2eccb5d xt/pod_spellrc
+SHA1 2c579b58def8daec94f41b628ac81c256faaa2b1 xt/pod_syntax.t
+SHA1 a38994922fda6d64e2ee75198fadc464a221fea9 xt/signature.t
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.9 (GNU/Linux)
+
+iEYEARECAAYFAknk64YACgkQhMHHe8CxClvYWwCgpQqHbd5HfWbUJRCG/L1Gx7fn
+3D4An1YUhX7V3r/+IOIGxsK1lR8mxeQ2
+=OAro
+-----END PGP SIGNATURE-----
