@@ -10,6 +10,12 @@ SYNOPSIS
       my $metamock = mock_anon_class 'Net::FTP';
       my $mock_object = $metamock->new_object;
 
+      # anonymous class with role applied
+      my $metamock = Test::Builder::Mock::Class->create_anon_class(
+          roles => [ 'My::Handler::Role' ],
+      );
+      my $mock_object = $metamock->new_object;
+
 DESCRIPTION
     This module adds support for standard Test::Builder framework
     (Test::Simple or Test::More) to Test::Mock::Class.
@@ -18,6 +24,9 @@ DESCRIPTION
     behavior of complex, real (non-mock) objects and are therefore useful
     when a real object is impractical or impossible to incorporate into a
     unit test.
+
+BUGS
+    The API is not stable yet and can be changed in future.
 
 AUTHOR
     Piotr Roszatycki <dexter@cpan.org>

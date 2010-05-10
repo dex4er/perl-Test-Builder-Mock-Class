@@ -14,19 +14,19 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 89d715dbde4c9dba11cd6ee77421dffc4a0748b7 Build.PL
-SHA1 cc2aa14e821b5b1a06eaa2e360ae33f8da948cf8 Changes
+SHA1 b05ab67d1d8ae6eb5e91efcf09bb69bda98af732 Build.PL
+SHA1 3dbfc018f8c3d55fc62bc5ba6a01389d62435ffd Changes
 SHA1 f939988925f19fecc806b85f1e4d752dc9d46a6e LICENSE
 SHA1 58db967c66ac414bc123bcb2829e4e113cfceb7e MANIFEST
-SHA1 7d9037725a8f8c9c65eff1e091819c215f55c650 MANIFEST.SKIP
-SHA1 b755cc15238a0aa38005904713aa3c1331550c95 META.yml
-SHA1 7c62259e2aff702f3c517e028777adc50251fbaf Makefile.PL
-SHA1 0045d920bcfa2a0c553cc1ff72d57484288e92ca README
+SHA1 a1dbf257177f9f76372ac111f127bc34f4f3fb24 MANIFEST.SKIP
+SHA1 6721cda3632841530c106b42c4626888ef10f363 META.yml
+SHA1 f1cdeaa8188f2c460ecc208938e60eb5e90978cf Makefile.PL
+SHA1 6ccb803e199a73ffd9afb13276c6dee6e5bba0e8 README
 SHA1 7f23eaab6f48bb51f1dcc2d1c7694730218260c1 eg/mock_io_file.pl
 SHA1 8fb9657aa7bad5fbe28253ccd12527bab92d5d19 eg/mock_meta_io_file.pl
-SHA1 043df8dadf50bdfa9a05be5f2bf9c75656c68ec7 lib/Test/Builder/Mock/Class.pm
-SHA1 9d49ac46e2b0b7d8c280ffc13e01c98a669a6067 lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
-SHA1 b745835b0265f7dd1229d01b8262c834dcaa3281 lib/Test/Builder/Mock/Class/Role/Object.pm
+SHA1 327392981b69ab15e8e2d3272936209489c1eefc lib/Test/Builder/Mock/Class.pm
+SHA1 425a68d3a6ea7a5a48ceb6b2a6be79d053815bfb lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
+SHA1 8971432d94f302b52102af164841d6766c023cf4 lib/Test/Builder/Mock/Class/Role/Object.pm
 SHA1 79987f6c3db16fe3cd34ffc18f166c8a33274dfc t/010_eg_mock_io_file.t
 SHA1 f0f8e588271be3b8329652e9057237548e0b44f1 t/020_eg_mock_meta_io_file.t
 SHA1 abec3fa7149e59f9f36680c5a49dfbbebd9d6ecc t/test.pl
@@ -47,7 +47,7 @@ SHA1 a38994922fda6d64e2ee75198fadc464a221fea9 xt/signature.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAknm/3cACgkQhMHHe8CxCluVTQCfQ4nC/Hhc+DCBSnK0NbTsbtTP
-9BMAn0ldVkasbVIIOdTIKcPuB1li8yEi
-=7t9J
+iEYEARECAAYFAknrg+cACgkQhMHHe8CxClvKoACgsfxyQVZ/W7ZN+REJpipiEUTA
+Ne4AnAslpxFIDC/c+HnHrmHzAbdghjgn
+=unMQ
 -----END PGP SIGNATURE-----
