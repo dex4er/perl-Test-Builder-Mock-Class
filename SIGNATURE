@@ -15,18 +15,18 @@ not run its Makefile.PL or Build.PL.
 Hash: SHA1
 
 SHA1 8bd0ff3240135d8a2d2418636641c51c7c437e2f Build.PL
-SHA1 c9651645c4135e12e0a5152d377884ec061c0481 Changes
+SHA1 7a84c7b033eb43f286fc97815fbc8ff5ad30199e Changes
 SHA1 74b1c398020b9c1e8849b7982751cb70ecc5de8d LICENSE
 SHA1 58db967c66ac414bc123bcb2829e4e113cfceb7e MANIFEST
 SHA1 7d9037725a8f8c9c65eff1e091819c215f55c650 MANIFEST.SKIP
-SHA1 a905b2dbc1387b137503138f0a2b19a3ebd01525 META.yml
-SHA1 b3101f1b16a64eed64605ece56216a06354286f4 Makefile.PL
-SHA1 b18336e15107bcd419a4af4b4ef3b21805bd53c2 README
+SHA1 f45b5f92819cb863c965afac67d24e471656f5d8 META.yml
+SHA1 7c62259e2aff702f3c517e028777adc50251fbaf Makefile.PL
+SHA1 0045d920bcfa2a0c553cc1ff72d57484288e92ca README
 SHA1 7f23eaab6f48bb51f1dcc2d1c7694730218260c1 eg/mock_io_file.pl
 SHA1 8fb9657aa7bad5fbe28253ccd12527bab92d5d19 eg/mock_meta_io_file.pl
-SHA1 294f400f1c5b9fc69282ccd47cb792abca5486ed lib/Test/Builder/Mock/Class.pm
-SHA1 4c020dd53430f89ca6239f8292b756f3d8742ee0 lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
-SHA1 505f0a6a6b76bf08957b6e3f0e31f6f417393b7c lib/Test/Builder/Mock/Class/Role/Object.pm
+SHA1 9d9b7ef2a1d5466f29a38bddff16d899901bcc9c lib/Test/Builder/Mock/Class.pm
+SHA1 7595a696121349293dbd9f8bc362f2c78f863416 lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
+SHA1 5f45e5e0de44dfc92ae67eaa60194ef68200b7bf lib/Test/Builder/Mock/Class/Role/Object.pm
 SHA1 79987f6c3db16fe3cd34ffc18f166c8a33274dfc t/010_eg_mock_io_file.t
 SHA1 f0f8e588271be3b8329652e9057237548e0b44f1 t/020_eg_mock_meta_io_file.t
 SHA1 abec3fa7149e59f9f36680c5a49dfbbebd9d6ecc t/test.pl
@@ -41,13 +41,13 @@ SHA1 bc3447b88eb7e052140f312924a21f366d525131 xt/perlcriticrc
 SHA1 2c579b58def8daec94f41b628ac81c256faaa2b1 xt/pod.t
 SHA1 775b3ac02805b6d703614f42608732fb43af2a41 xt/pod_coverage.t
 SHA1 bef7d46eb5cbc3e67956d4e823ec199f41ab9268 xt/pod_spell.t
-SHA1 021ea9d1d3b0d39b6d8e9fdd84f7b76fc2eccb5d xt/pod_spellrc
+SHA1 73bffc9d52c12c9c16a5431c813b5007d6914411 xt/pod_spellrc
 SHA1 2c579b58def8daec94f41b628ac81c256faaa2b1 xt/pod_syntax.t
 SHA1 a38994922fda6d64e2ee75198fadc464a221fea9 xt/signature.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAknk64YACgkQhMHHe8CxClvYWwCgpQqHbd5HfWbUJRCG/L1Gx7fn
-3D4An1YUhX7V3r/+IOIGxsK1lR8mxeQ2
-=OAro
+iEYEARECAAYFAknl6gAACgkQhMHHe8CxClvayQCg3sIlw5R4kSpaoR3mUy9eKin9
+nUkAmQH5yoyS8V8IlgAftv8vz+tFUmfv
+=cjUZ
 -----END PGP SIGNATURE-----

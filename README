@@ -1,5 +1,5 @@
 NAME
-    Test::Builder::Mock::Class - Simulating other classes with Test::Builder
+    Test::Builder::Mock::Class - Simulating other classes for Test::Builder
 
 SYNOPSIS
       use Test::Builder::Mock::Class ':all';
