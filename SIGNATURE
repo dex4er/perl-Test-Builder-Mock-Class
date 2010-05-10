@@ -14,21 +14,21 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 b05ab67d1d8ae6eb5e91efcf09bb69bda98af732 Build.PL
-SHA1 3dbfc018f8c3d55fc62bc5ba6a01389d62435ffd Changes
+SHA1 53084db74d110382a5aee200b89c70d8664b8e03 Build.PL
+SHA1 aa794a5596e35022f5c28211722fe6d97880a842 Changes
 SHA1 f939988925f19fecc806b85f1e4d752dc9d46a6e LICENSE
 SHA1 58db967c66ac414bc123bcb2829e4e113cfceb7e MANIFEST
 SHA1 a1dbf257177f9f76372ac111f127bc34f4f3fb24 MANIFEST.SKIP
-SHA1 6721cda3632841530c106b42c4626888ef10f363 META.yml
-SHA1 f1cdeaa8188f2c460ecc208938e60eb5e90978cf Makefile.PL
+SHA1 2bd40d88c70e5bd160cc5815f26c28ea9cc7060d META.yml
+SHA1 9d96c4c9015d59cf7b576bae87536d4b2108bf9a Makefile.PL
 SHA1 6ccb803e199a73ffd9afb13276c6dee6e5bba0e8 README
 SHA1 7f23eaab6f48bb51f1dcc2d1c7694730218260c1 eg/mock_io_file.pl
 SHA1 8fb9657aa7bad5fbe28253ccd12527bab92d5d19 eg/mock_meta_io_file.pl
-SHA1 327392981b69ab15e8e2d3272936209489c1eefc lib/Test/Builder/Mock/Class.pm
-SHA1 425a68d3a6ea7a5a48ceb6b2a6be79d053815bfb lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
-SHA1 8971432d94f302b52102af164841d6766c023cf4 lib/Test/Builder/Mock/Class/Role/Object.pm
-SHA1 79987f6c3db16fe3cd34ffc18f166c8a33274dfc t/010_eg_mock_io_file.t
-SHA1 f0f8e588271be3b8329652e9057237548e0b44f1 t/020_eg_mock_meta_io_file.t
+SHA1 bbd60bb2b7e8ab9503b6c28a7b1d6d3b0cabeb89 lib/Test/Builder/Mock/Class.pm
+SHA1 cc42c135e3aafdf25cd7261106210dd7a99160e2 lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
+SHA1 31f5781bf8d33a1e13362561908e86630c67facc lib/Test/Builder/Mock/Class/Role/Object.pm
+SHA1 23c63660dec7cdb38688a1b2b2392cd904c416b1 t/010_eg_mock_io_file.t
+SHA1 7e3085b8bf3a1932414a85d54511d617a57ac501 t/020_eg_mock_meta_io_file.t
 SHA1 abec3fa7149e59f9f36680c5a49dfbbebd9d6ecc t/test.pl
 SHA1 90353a99ac0f719b6f3e58029804d8556cedc2ab xt/check_changes.t
 SHA1 a56d0c02b6c992e04a77d13a6ee89504bd718572 xt/consistent_version_numbers.t
@@ -47,7 +47,7 @@ SHA1 a38994922fda6d64e2ee75198fadc464a221fea9 xt/signature.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.9 (GNU/Linux)
 
-iEYEARECAAYFAknrg+cACgkQhMHHe8CxClvKoACgsfxyQVZ/W7ZN+REJpipiEUTA
-Ne4AnAslpxFIDC/c+HnHrmHzAbdghjgn
-=unMQ
+iEYEARECAAYFAkroRwMACgkQhMHHe8CxCltmAACg3oUiaWrGyjvp/hhAwpL0XwhU
+2h0An3knirEGZF2aOFSIbns3mCOJOuev
+=jvUF
 -----END PGP SIGNATURE-----
