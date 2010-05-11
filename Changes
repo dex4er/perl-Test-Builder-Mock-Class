@@ -1,6 +1,11 @@
 ------------------------------------------------------------------------
 0.0202 | Piotr Roszatycki <dexter@cpan.org> | 2010-05-10
 
+Fixes:
+
+* Class::MOP requires IO::* modules explicitly.  Implicit load does not work
+  correctly.
+
 ------------------------------------------------------------------------
 0.0201 | Piotr Roszatycki <dexter@cpan.org> | 2009-10-28
 

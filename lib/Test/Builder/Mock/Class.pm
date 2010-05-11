@@ -9,6 +9,8 @@ Test::Builder::Mock::Class - Simulating other classes for Test::Builder
 =head1 SYNOPSIS
 
   use Test::Builder::Mock::Class ':all';
+
+  require 'Net::FTP::Mock';
   mock_class 'Net::FTP' => 'Net::FTP::Mock';
   my $mock_object = Net::FTP::Mock->new;
 
@@ -180,6 +182,7 @@ Example code:
   use Test::More tests => 3;
   use Test::Builder::Mock::Class ':all';
 
+  require 'IO::File';
   my $mock = mock_anon_class 'IO::File';
   my $io = $mock->new_object;
   $io->mock_return( open => 1, args => [qr//, 'r'] );

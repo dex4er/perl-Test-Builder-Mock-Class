@@ -10,6 +10,8 @@ use Test::More tests => 9;
 use constant::boolean;
 use Test::Builder::Mock::Class ':all';
 
+require IO::File;
+
 mock_class 'IO::File' => 'IO::File::Mock';
 
 my $mock = mock_anon_class 'IO::File';
