@@ -18,7 +18,7 @@ my $build = Module::Build->new(
         'perl'               => 5.006,
         'namespace::clean'   => 0,
         'Moose'              => 0.89,
-        'Test::Mock::Class'  => 0.0201,
+        'Test::Mock::Class'  => 0.0303,
         'Test::Builder'      => 0,
     },
     optional => {
@@ -39,7 +39,7 @@ my $build = Module::Build->new(
     meta_merge => {
         resources => {
             bugtracker => "http://rt.cpan.org/NoAuth/Bugs.html?Dist=$dist",
-            repository => "http://dexter-cpan.googlecode.com/svn/$dist",
+            repository => "http://github.com/dex4er/$dist",
         },
     },
 );

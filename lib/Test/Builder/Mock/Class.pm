@@ -9,6 +9,8 @@ Test::Builder::Mock::Class - Simulating other classes for Test::Builder
 =head1 SYNOPSIS
 
   use Test::Builder::Mock::Class ':all';
+
+  require 'Net::FTP::Mock';
   mock_class 'Net::FTP' => 'Net::FTP::Mock';
   my $mock_object = Net::FTP::Mock->new;
 
@@ -31,6 +33,8 @@ Mock class can be used to create mock objects which can simulate the behavior
 of complex, real (non-mock) objects and are therefore useful when a real
 object is impractical or impossible to incorporate into a unit test.
 
+See L<Test::Mock::Class> for more detailed documentation.
+
 =for readme stop
 
 =cut
@@ -40,7 +44,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.0201';
+our $VERSION = '0.0202';
 
 use Moose;
 
@@ -180,6 +184,7 @@ Example code:
   use Test::More tests => 3;
   use Test::Builder::Mock::Class ':all';
 
+  require 'IO::File';
   my $mock = mock_anon_class 'IO::File';
   my $io = $mock->new_object;
   $io->mock_return( open => 1, args => [qr//, 'r'] );
@@ -217,7 +222,7 @@ Based on SimpleTest, an open source unit test framework for the PHP
 programming language, created by Marcus Baker, Jason Sweat, Travis Swicegood,
 Perrick Penet and Edward Z. Yang.
 
-Copyright (c) 2009 Piotr Roszatycki <dexter@cpan.org>.
+Copyright (c) 2009, 2010 Piotr Roszatycki <dexter@cpan.org>.
 
 This program is free software; you can redistribute it and/or modify it
 under GNU Lesser General Public License.

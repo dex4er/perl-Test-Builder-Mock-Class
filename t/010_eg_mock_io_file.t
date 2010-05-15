@@ -12,6 +12,8 @@ use Test::Moose;
 
 use constant::boolean;
 
+require IO::File;
+
 BEGIN { use_ok 'Test::Builder::Mock::Class', ':all' };
 
 eval {
