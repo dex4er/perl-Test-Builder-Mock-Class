@@ -33,6 +33,8 @@ Mock class can be used to create mock objects which can simulate the behavior
 of complex, real (non-mock) objects and are therefore useful when a real
 object is impractical or impossible to incorporate into a unit test.
 
+See L<Test::Mock::Class> for more detailed documentation.
+
 =for readme stop
 
 =cut
