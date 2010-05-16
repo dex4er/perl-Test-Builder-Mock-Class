@@ -3,6 +3,8 @@ NAME
 
 SYNOPSIS
       use Test::Builder::Mock::Class ':all';
+
+      require 'Net::FTP::Mock';
       mock_class 'Net::FTP' => 'Net::FTP::Mock';
       my $mock_object = Net::FTP::Mock->new;
 
@@ -25,6 +27,8 @@ DESCRIPTION
     when a real object is impractical or impossible to incorporate into a
     unit test.
 
+    See Test::Mock::Class for more detailed documentation.
+
 BUGS
     The API is not stable yet and can be changed in future.
 
@@ -36,7 +40,7 @@ LICENSE
     programming language, created by Marcus Baker, Jason Sweat, Travis
     Swicegood, Perrick Penet and Edward Z. Yang.
 
-    Copyright (c) 2009 Piotr Roszatycki <dexter@cpan.org>.
+    Copyright (c) 2009, 2010 Piotr Roszatycki <dexter@cpan.org>.
 
     This program is free software; you can redistribute it and/or modify it
     under GNU Lesser General Public License.

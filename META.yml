@@ -1,31 +1,31 @@
 ---
-name: Test-Builder-Mock-Class
-version: 0.0201
+abstract: 'Simulating other classes for Test::Builder'
 author:
   - 'Piotr Roszatycki <dexter@cpan.org>'
-abstract: Simulating other classes for Test::Builder
+generated_by: 'Module::Build version 0.3607'
 license: lgpl
-resources:
-  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Test-Builder-Mock-Class
-  license: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
-  repository: http://dexter-cpan.googlecode.com/svn/Test-Builder-Mock-Class
-requires:
-  Moose: 0.89
-  Test::Builder: 0
-  Test::Mock::Class: 0.0201
-  namespace::clean: 0
-  perl: 5.006
-provides:
-  Test::Builder::Mock::Class:
-    file: lib/Test/Builder/Mock/Class.pm
-    version: 0.0201
-  Test::Builder::Mock::Class::Role::Meta::Class:
-    file: lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
-    version: 0.0201
-  Test::Builder::Mock::Class::Role::Object:
-    file: lib/Test/Builder/Mock/Class/Role/Object.pm
-    version: 0.0201
-generated_by: Module::Build version 0.35
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
+name: Test-Builder-Mock-Class
+provides:
+  Test::Builder::Mock::Class:
+    file: lib/Test/Builder/Mock/Class.pm
+    version: 0.0202
+  Test::Builder::Mock::Class::Role::Meta::Class:
+    file: lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
+    version: 0.0202
+  Test::Builder::Mock::Class::Role::Object:
+    file: lib/Test/Builder/Mock/Class/Role/Object.pm
+    version: 0.0202
+requires:
+  Moose: 0.89
+  Test::Builder: 0
+  Test::Mock::Class: 0.0303
+  namespace::clean: 0
+  perl: 5.006
+resources:
+  bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Test-Builder-Mock-Class
+  license: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
+  repository: http://github.com/dex4er/Test-Builder-Mock-Class
+version: 0.0202
