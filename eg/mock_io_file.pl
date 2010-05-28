@@ -5,12 +5,15 @@ use lib 'lib', '../lib';
 use strict;
 use warnings;
 
-use Test::More tests => 10;
+use Test::More;
 
 use constant::boolean;
 use Test::Builder::Mock::Class ':all';
 
 require IO::File;
+require Moose;
+
+plan tests => (Moose->VERSION >= 1.05 ? 11 : 10);
 
 mock_class 'IO::File' => 'IO::File::Mock';
 

@@ -1,4 +1,12 @@
 ------------------------------------------------------------------------
+0.0203 | Piotr Roszatycki <dexter@cpan.org> | 2010-05-28
+
+Fixes:
+
+* Moose after version 1.05 calls "BUILDALL" method automatically, so this
+  is one more test to whole plan.
+
+------------------------------------------------------------------------
 0.0202 | Piotr Roszatycki <dexter@cpan.org> | 2010-05-14
 
 Fixes:

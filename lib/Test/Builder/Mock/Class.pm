@@ -9,20 +9,25 @@ Test::Builder::Mock::Class - Simulating other classes for Test::Builder
 =head1 SYNOPSIS
 
   use Test::Builder::Mock::Class ':all';
+  use Test::More 'no_plan';
 
-  require 'Net::FTP::Mock';
+  # concrete mock class
   mock_class 'Net::FTP' => 'Net::FTP::Mock';
-  my $mock_object = Net::FTP::Mock->new;
+  my $mock_object1 = Net::FTP::Mock->new;
+  $mock_object1->mock_tally;
 
   # anonymous mocked class
-  my $metamock = mock_anon_class 'Net::FTP';
-  my $mock_object = $metamock->new_object;
+  my $metamock2 = mock_anon_class 'Net::FTP';
+  my $mock_object2 = $metamock2->new_object;
+  $mock_object2->mock_tally;
 
   # anonymous class with role applied
-  my $metamock = Test::Builder::Mock::Class->create_anon_class(
+  my $metamock3 = Test::Builder::Mock::Class->create_mock_anon_class(
+      class => 'Net::FTP',
       roles => [ 'My::Handler::Role' ],
   );
-  my $mock_object = $metamock->new_object;
+  my $mock_object3 = $metamock3->new_object;
+  $mock_object3->mock_tally;
 
 =head1 DESCRIPTION
 
@@ -44,7 +49,7 @@ use 5.006;
 use strict;
 use warnings;
 
-our $VERSION = '0.0202';
+our $VERSION = '0.0203';
 
 use Moose;
 
@@ -181,7 +186,7 @@ Example code:
 
   package My::ExampleTest;
 
-  use Test::More tests => 3;
+  use Test::More 'no_plan';
   use Test::Builder::Mock::Class ':all';
 
   require 'IO::File';
@@ -191,6 +196,26 @@ Example code:
 
   ok( $io->open('/etc/passwd', 'r'), '$io->open' );
   $io->mock_tally;
+
+=head1 BUGS
+
+L<Moose> after version 1.05 calls C<BUILDALL> method automatically, so this
+is one more test to whole plan.
+
+L<Test::More> needs an exact count of all tests and it will be different for
+L<Moose> before and after version 1.05.  There are following workarounds:
+
+  # No plan at all
+  use Test::More 'no_plan';
+
+  # Different plans depend on Moose version
+  use Test::More;
+  require Moose;
+  plan tests => (Moose->VERSION >= 1.05 ? 10 : 8);
+
+  # Require Moose >= 1.05
+  use Moose 1.05 ();
+  use Test::More tests => 10;
 
 =head1 SEE ALSO
 
