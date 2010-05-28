@@ -11,13 +11,13 @@ name: Test-Builder-Mock-Class
 provides:
   Test::Builder::Mock::Class:
     file: lib/Test/Builder/Mock/Class.pm
-    version: 0.0202
+    version: 0.0203
   Test::Builder::Mock::Class::Role::Meta::Class:
     file: lib/Test/Builder/Mock/Class/Role/Meta/Class.pm
-    version: 0.0202
+    version: 0.0203
   Test::Builder::Mock::Class::Role::Object:
     file: lib/Test/Builder/Mock/Class/Role/Object.pm
-    version: 0.0202
+    version: 0.0203
 requires:
   Moose: 0.89
   Test::Builder: 0
@@ -28,4 +28,4 @@ resources:
   bugtracker: http://rt.cpan.org/NoAuth/Bugs.html?Dist=Test-Builder-Mock-Class
   license: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.txt
   repository: http://github.com/dex4er/Test-Builder-Mock-Class
-version: 0.0202
+version: 0.0203
