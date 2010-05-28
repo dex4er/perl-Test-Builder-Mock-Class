@@ -7,14 +7,17 @@ use Carp ();
 
 $SIG{__WARN__} = sub { local $Carp::CarpLevel = 1; Carp::confess("Warning: ", @_) };
 
-use Test::More tests => 16;
+use Test::More;
 use Test::Moose;
 
 use constant::boolean;
 
 require IO::File;
+require Moose;
 
-BEGIN { use_ok 'Test::Builder::Mock::Class', ':all' };
+plan tests => (Moose->VERSION >= 1.05 ? 17 : 16);
+
+use_ok 'Test::Builder::Mock::Class', ':all';
 
 eval {
     isa_ok( my $mock = mock_anon_class( 'IO::File' ), 'Test::Builder::Mock::Class', 'mock_anon_class' );

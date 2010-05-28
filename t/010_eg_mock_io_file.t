@@ -7,17 +7,21 @@ use Carp ();
 
 $SIG{__WARN__} = sub { local $Carp::CarpLevel = 1; Carp::confess("Warning: ", @_) };
 
-use Test::More tests => 18;
+use Test::More;
 use Test::Moose;
 
 use constant::boolean;
 
 require IO::File;
+require Moose;
 
-BEGIN { use_ok 'Test::Builder::Mock::Class', ':all' };
+plan tests => (Moose->VERSION >= 1.05 ? 19 : 18);
+
+use_ok 'Test::Builder::Mock::Class', ':all';
 
 eval {
     isa_ok( mock_class( 'IO::File' => 'IO::File::Mock' ), 'Test::Builder::Mock::Class', 'mock_class' );
+    IO::File::Mock->meta->add_mock_method('BUILDALL');
 
     isa_ok( my $io = IO::File::Mock->new, 'IO::File::Mock', '$io' );
     does_ok( $io, 'Test::Builder::Mock::Class::Role::Object', '$io does Test::Builder::Mock::Class::Role::Object' );

@@ -5,7 +5,9 @@ use lib 'lib', '../lib';
 use strict;
 use warnings;
 
-use Test::More tests => 9;
+use Moose 1.05 ();
+
+use Test::More tests => 10;
 
 use constant::boolean;
 use Test::Builder::Mock::Class ':all';
