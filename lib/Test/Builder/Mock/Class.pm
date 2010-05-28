@@ -203,8 +203,7 @@ L<Moose> after version 1.05 calls C<BUILDALL> method automatically, so this
 is one more test to whole plan.
 
 L<Test::More> needs an exact count of all tests and it will be different for
-L<Moose> before and after version 1.05.  It can be overriden with following
-ways:
+L<Moose> before and after version 1.05.  There are following workarounds:
 
   # No plan at all
   use Test::More 'no_plan';
